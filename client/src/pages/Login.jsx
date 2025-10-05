@@ -180,7 +180,7 @@ export default function LoginPage() {
         if (data.user.role === "admin") {
           navigate("/adminDashboard");
         } else if (data.user.role === "employee") {
-          navigate("/employeedashboard");
+          navigate("/employeeDashboard");
         } else {
           navigate("/"); // fallback
         }

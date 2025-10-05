@@ -148,7 +148,7 @@ export default function SignupPage() {
   const [email, setEmail] = useState("");
   const [employeeId, setEmployeeId] = useState("");
   const [password, setPassword] = useState("");
-  const [role, setRole] = useState("employee"); // Changed default to 'employee'
+  const [role, setRole] = useState(""); // Changed default to 'employee'
   const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
 
@@ -270,27 +270,26 @@ export default function SignupPage() {
 
               {/* Role Dropdown */}
               <Box sx={{ mb: 2 }}>
-                <FormControl fullWidth>
-                  <InputLabel id="role-select-label" sx={{ color: '#9ca3af' }}>Role</InputLabel>
-                  <Select
-                    labelId="role-select-label"
-                    id="role-select"
-                    value={role}
-                    label="Role"
-                    onChange={(e) => setRole(e.target.value)}
-                    MenuProps={{ PaperProps: { sx: { backgroundColor: '#111827', color: 'white' } } }}
-                    sx={{
-                      ...themeStyles.inputField,
-                      "& .MuiSelect-select": { py: '12.5px' },
-                      "& .MuiSelect-icon": { color: "#34d399" }, // Green icon
-                    }}
-                  >
-                    <MenuItem value="employee">Employee</MenuItem>
-                    {/* NOTE: Typically admin registration is done internally, but keeping the option for now */}
-                    <MenuItem value="admin">Admin</MenuItem> 
-                  </Select>
-                </FormControl>
-              </Box>
+                              <FormControl fullWidth>
+                                <InputLabel id="role-select-label" sx={{ color: '#9ca3af' }}>Role</InputLabel>
+                                <Select
+                                  labelId="role-select-label"
+                                  id="role-select"
+                                  value={role}
+                                  label="Role"
+                                  onChange={(e) => setRole(e.target.value)}
+                                  MenuProps={{ PaperProps: { sx: { backgroundColor: '#111827', color: 'white' } } }}
+                                  sx={{
+                                    ...themeStyles.inputField,
+                                    "& .MuiSelect-select": { py: '12.5px' },
+                                    "& .MuiSelect-icon": { color: "#34d399" }, // Green icon
+                                  }}
+                                >
+                                  <MenuItem value="admin">Admin</MenuItem>
+                                  <MenuItem value="employee">Employee</MenuItem>
+                                </Select>
+                              </FormControl>
+                            </Box>
 
               {/* Sign Up Button */}
               <Button

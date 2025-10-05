@@ -211,7 +211,7 @@ export default function EmployeeTicketPage() {
           <Grid item>
             <Button
               component={MuiLink}
-              href="/dashboard/tickets/new"
+              href="ickets/new"
               variant="contained"
               startIcon={<Add />}
               disableElevation
