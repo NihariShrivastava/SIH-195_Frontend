@@ -7,6 +7,7 @@ import { db } from "./config/firebaseAdmin.js";
 import { authenticate } from "./middlewares/authMiddleware.js";
 import { register, login, logout } from "./controllers/userController.js";
 import cors from "cors";
+import ticketRoutes from "./routes/ticketRoutes.js";
 
 dotenv.config(); // JWT_SECRET aur PORT ke liye
 
@@ -30,6 +31,10 @@ app.get("/", (req, res) => {
 app.post("/api/register", register);
 app.post("/api/login", login);
 app.post("/api/logout", logout); // POST logout
+
+//-----------------------------------------------
+
+app.use("/api/tickets", ticketRoutes)
 
 // ---------------- Add User ----------------
 app.post("/api/addUser", async (req, res) => {
